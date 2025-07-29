@@ -3,14 +3,14 @@ from PIL import Image
 import os
 
 # Define image folder
-barcode_folder = r"https://github.com/Vekri/AI-ROBOT-APPS"
+barcode_folder = "https://github.com/Vekri/AI-ROBOT-APPS"
 
 # Map of filenames to (label, link)
 barcode_info = {
-    "https://github.com/Vekri/AI-ROBOT-APPS/EDA_APP.png": ("EDA APP", "https://edaappsingareddy-y7axy22nl4rtagozreekiw.streamlit.app/"),
-    "visualizationapp.png": ("visualizationapp", "https://github.com/Vekri/AI-ROBOT-APPS/blob/main/visualizationapp.png"),
-    "Search_Engine.png": ("Search_Engine", "https://github.com/Vekri/AI-ROBOT-APPS/blob/main/Search_Engine.png"),
-    "Classificationapp.png": ("Classificationapp", "https://github.com/Vekri/AI-ROBOT-APPS/blob/main/Classificationapp.png")
+    "EDA_APP.png": ("EDA APP", "https://edaappsingareddy-y7axy22nl4rtagozreekiw.streamlit.app/"),
+    "visualizationapp.png": ("visualizationapp", "https://visualizationapp-8y3wkb2met6wwjx5nrxomw.streamlit.app/"),
+    "Search_Engine.png": ("Search_Engine", "https://search-engine-llm-kdm4wsfq5kghq6htq9tue7.streamlit.app/"),
+    "Classificationapp.png": ("Classificationapp", "https://classification-model-wqcgqhwihsg76npktrrbn5.streamlit.app/")
         }
 
 # Show AI robot image at the top with smaller size
