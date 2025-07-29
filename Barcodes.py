@@ -3,7 +3,7 @@ from PIL import Image
 import os
 
 # Define image folder
-barcode_folder = r"D:\Streamlit\eda_app\Barcodes"
+barcode_folder = r"https://github.com/Vekri/AI-ROBOT-APPS/tree/main"
 
 # Map of filenames to (label, link)
 barcode_info = {
