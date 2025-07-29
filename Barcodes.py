@@ -3,7 +3,7 @@ from PIL import Image
 import os
 
 # Define image folder
-barcode_folder = "https://github.com/Vekri/AI-ROBOT-APPS"
+barcode_folder = "https://github.com/Vekri/AI-ROBOT-APPS/blob/main/"
 
 # Map of filenames to (label, link)
 barcode_info = {
