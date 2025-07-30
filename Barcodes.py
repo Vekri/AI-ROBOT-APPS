@@ -8,7 +8,7 @@ barcode_folder = "https://raw.githubusercontent.com/Vekri/AI-ROBOT-APPS/main/"
 
 # Map of filenames to (label, link)
 barcode_info = {
-    "EDA_APP.png": ("Deploy your EDA APP to Deploy", "https://edaappsingareddy-y7axy22nl4rtagozreekiw.streamlit.app/"),
+    "EDA_APP.png": ("Deploy your EDA APP", "https://edaappsingareddy-y7axy22nl4rtagozreekiw.streamlit.app/"),
     "visualizationapp.png": ("Deploy your Visualization App", "https://visualizationapp-8y3wkb2met6wwjx5nrxomw.streamlit.app/"),
     "Search_Engine.png": ("Deploy your Search Engine", "https://search-engine-llm-kdm4wsfq5kghq6htq9tue7.streamlit.app/"),
     "Classificationapp.png": ("Deploy your Classification App", "https://classification-model-wqcgqhwihsg76npktrrbn5.streamlit.app/")
