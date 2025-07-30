@@ -50,7 +50,7 @@ for idx, (filename, (label, link)) in enumerate(barcode_info.items()):
 
         with cols[idx % 4]:
             st.image(image, caption=label, use_container_width=True)
-            st.markdown(f"[🔗 Open Link]({link})", unsafe_allow_html=True)
+            st.markdown(f"[🔗 Deploy Link]({link})", unsafe_allow_html=True)
             st.download_button(
                 label="📥 Download",
                 data=response.content,
