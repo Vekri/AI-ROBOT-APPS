@@ -14,31 +14,45 @@ barcode_info = {
     "Classificationapp.png": ("Classification App", "https://classification-model-wqcgqhwihsg76npktrrbn5.streamlit.app/")
 }
 
-# Show AI robot image at the top
-st.image(
-    "https://cdn.pixabay.com/photo/2023/05/24/17/49/ai-generated-8015425_1280.jpg",
-    caption="AI Robot (Singareddy AI Labs)",
-    width=180
-)
+# Show AI robot image at the top with smaller size
+cols_intro = st.columns([2, 10])
+with cols_intro[0]:
+    st.image(
+        "https://cdn.pixabay.com/photo/2023/05/24/17/49/ai-generated-8015425_1280.jpg",
+        caption="AI Robot (Singareddy AI Labs)",
+        width=90
+    )
+with cols_intro[1]:
+    st.markdown("""
+    <div style='min-height: 180px; display: flex; flex-direction: column; justify-content: flex-start; margin-left: 0; padding-left: 20px;'>
+    <h2 style='margin-bottom: 0; margin-top: 0; word-break: break-word;'>SingaReddy – Marketing Analytics Consultant | Data Science | AI/LLM Apps | Python | Cloud</h2>
+    <p style='margin-top: 0;'>
+    Over 17 years of experience driving business growth through data science, predictive modeling, and AI applications. Skilled in Python (pandas, scikit-learn, Hugging Face), SQL, SAS, and cloud deployment uild end-to-end solutions using Streamlit, LangChain, and LLMs for marketing, personalization, and automation. Proven leader in developing and deploying scalable, real-time analytics systems.
+    </p>
+    <b>Contact:</b> <a href='mailto:btsinga999@gmail.com'>btsinga999@gmail.com</a><br>
+    <b>LinkedIn:</b> <a href='https://www.linkedin.com/in/rajeswar-reddy-44152450' target='_blank'>https://www.linkedin.com/in/rajeswar-reddy-44152450</a><br>
+    <b>AI Projects:</b> <a href='https://ai-robot-apps-a8d78utapcoszwhfqmkiyt.streamlit.app' target='_blank'>https://ai-robot-apps-a8d78utapcoszwhfqmkiyt.streamlit.app</a>
+    </div>
+    """, unsafe_allow_html=True)
 
+# Layout
 st.title("AI Apps Collections")
 
 cols = st.columns(4)
 
 for idx, (filename, (label, link)) in enumerate(barcode_info.items()):
-    image_url = barcode_folder + filename
-    try:
-        response = requests.get(image_url)
-        response.raise_for_status()
-        image = Image.open(BytesIO(response.content))
-        with cols[idx % 4]:  # 4 columns
-            st.image(image, caption=label, use_container_width=True)
-            st.markdown(f"[🔗 Open Link]({link})", unsafe_allow_html=True)
+    image_path = os.path.join(barcode_folder, filename)
+    if not os.path.exists(image_path):
+        continue  # skip if file not found
+    image = Image.open(image_path)
+    with cols[idx % 3]:
+        st.image(image, caption=label, use_container_width=True)
+        st.markdown(f"[🔗 Open Link]({link})", unsafe_allow_html=True)
+        with open(image_path, "rb") as img_file:
             st.download_button(
                 label="📥 Download",
-                data=response.content,
+                data=img_file,
                 file_name=filename,
                 mime="image/png"
             )
-    except Exception as e:
-        st.error(f"Failed to load {filename}: {e}")
+
