@@ -11,6 +11,7 @@ barcode_info = {
     "EDA_APP.png": ("Deploy your EDA APP", "https://edaappsingareddy-y7axy22nl4rtagozreekiw.streamlit.app/"),
     "visualizationapp.png": ("Deploy your Visualization App", "https://visualizationapp-8y3wkb2met6wwjx5nrxomw.streamlit.app/"),
     "Search_Engine.png": ("Deploy your Search Engine", "https://search-engine-llm-kdm4wsfq5kghq6htq9tue7.streamlit.app/"),
+    "Chat With SQLDB.png": ("Deploy your Chat With SQLDB", "https://chat-with-sql-db-diz4xugyhpvhbzhyrpxuxd.streamlit.app/"),
     "Classificationapp.png": ("Deploy your Classification App", "https://classification-model-wqcgqhwihsg76npktrrbn5.streamlit.app/")
 }
 
@@ -39,7 +40,7 @@ with cols_intro[1]:
 # Layout for app previews
 st.title("🚀 AI Apps Collections")
 
-cols = st.columns(4)
+cols = st.columns(5)
 
 for idx, (filename, (label, link)) in enumerate(barcode_info.items()):
     image_url = f"{barcode_folder}{filename}"
@@ -48,7 +49,7 @@ for idx, (filename, (label, link)) in enumerate(barcode_info.items()):
         response.raise_for_status()
         image = Image.open(BytesIO(response.content))
 
-        with cols[idx % 4]:
+        with cols[idx % 5]:
             st.image(image, caption=label, use_container_width=True)
             st.markdown(f"[🔗 Deploy Link]({link})", unsafe_allow_html=True)
             st.download_button(
@@ -59,3 +60,4 @@ for idx, (filename, (label, link)) in enumerate(barcode_info.items()):
             )
     except Exception as e:
         st.warning(f"⚠️ Could not load image: {filename}")
+
