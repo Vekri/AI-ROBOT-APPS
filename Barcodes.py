@@ -8,7 +8,7 @@ barcode_folder = "https://raw.githubusercontent.com/Vekri/AI-ROBOT-APPS/main/"
 
 # Map of filenames to (label, link)
 barcode_info = {
-    "EDA_APP.png": ("Deploy your EDA APP", "https://edaappsingareddy-y7axy22nl4rtagozreekiw.streamlit.app/"),
+    "EDA_APP.png": ("Deploy your Exploratory Data Analysis APP", "https://edaappsingareddy-y7axy22nl4rtagozreekiw.streamlit.app/"),
     "visualizationapp.png": ("Deploy your Visualization App", "https://visualizationapp-8y3wkb2met6wwjx5nrxomw.streamlit.app/"),
     "Search_Engine.png": ("Deploy your Search Engine", "https://search-engine-llm-kdm4wsfq5kghq6htq9tue7.streamlit.app/"),
     "Chat With SQLDB.png": ("Deploy your Chat With SQLDB", "https://chat-with-sql-db-diz4xugyhpvhbzhyrpxuxd.streamlit.app/"),
@@ -62,6 +62,7 @@ for idx, (filename, (label, link)) in enumerate(barcode_info.items()):
             )
     except Exception as e:
         st.warning(f"⚠️ Could not load image: {filename}")
+
 
 
 
