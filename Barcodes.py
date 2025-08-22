@@ -14,7 +14,8 @@ barcode_info = {
     "Chat With SQLDB.png": ("Deploy your Chat With SQLDB", "https://chat-with-sql-db-diz4xugyhpvhbzhyrpxuxd.streamlit.app/"),
     "Classificationapp.png": ("Deploy your Classification App", "https://classification-model-wqcgqhwihsg76npktrrbn5.streamlit.app/"),
     "NLP SUPER APP.png": ("Deploy your NLP SUPER App", "https://nlpsuperapp-cyqpap2cad7os2h9krzvjf.streamlit.app/"),
-    "Chart Insights.png": ("Deploy your Chart Insights App", "https://chart-insights-with-groq-vision-lkndvhyjgpajlynrseq9xb.streamlit.app/")
+    "Chart Insights.png": ("Deploy your Chart Insights App", "https://chart-insights-with-groq-vision-lkndvhyjgpajlynrseq9xb.streamlit.app/"),
+    "Normalization_Scaling_Demo.png": ("Deploy your Normalization & Scaling Demo App", "https://normalize-scale-explorer-9at5wyzjh5qwjuavtum87d.streamlit.app/")
 }
 
 # Show AI robot image at the top
@@ -62,6 +63,7 @@ for idx, (filename, (label, link)) in enumerate(barcode_info.items()):
             )
     except Exception as e:
         st.warning(f"⚠️ Could not load image: {filename}")
+
 
 
 
